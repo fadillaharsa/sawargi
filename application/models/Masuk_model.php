@@ -25,7 +25,7 @@ class Masuk_model extends CI_Model {
 				$param=array(
 				'username' => $this->input->post('inputUsername',true)
 				);
-				$auth=$this->db->where($param)->get('tracker_login');
+				$auth=$this->db->where($param)->get('data_warga');
 				$data=$auth->row_array();
 
 				if($required['username'] == $data['username']){
@@ -38,7 +38,7 @@ class Masuk_model extends CI_Model {
 				$success = false;
 			}
 		} else {
-			$this->session->set_userdata('login_message','Maaf, NPM atau Password Salah!');
+			$this->session->set_userdata('pesan_login','Maaf, NPM atau Password Salah!');
 			$success = false;
 		}
 		return $success;

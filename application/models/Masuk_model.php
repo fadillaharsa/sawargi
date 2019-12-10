@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Login_model extends CI_Model {
+class Masuk_model extends CI_Model {
 	function __construct(){
 		parent::__construct();
 	}
 
-	function login(){
+	function masuk(){
 		$this->form_validation->set_rules('inputUsername', 'username', 'required'); //form view sebagai apa
 		$this->form_validation->set_rules('inputPassword', 'password', 'required'); //form view sebagai apa
 
@@ -14,13 +14,14 @@ class Login_model extends CI_Model {
 			'username' => $this->input->post('inputUsername',true) //nama kolom
 			,'password' => md5( $this->input->post('inputPassword',true)) //nama kolom
 			);
-			$auth=$this->db->where($required)->get('tracker_login');//nama tabel
+
+			$auth=$this->db->where($required)->get('data_warga');//nama tabel
 			$data=$auth->row_array();
 
 			if($auth->num_rows()==1){
-				$this->session->set_userdata('user_has_login',true);
+				$this->session->set_userdata('pengguna_sudah_masuk',true);
 				$success=true;
-			} else {
+			}else {
 				$param=array(
 				'username' => $this->input->post('inputUsername',true)
 				);

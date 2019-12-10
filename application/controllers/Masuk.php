@@ -27,7 +27,7 @@ class Masuk extends CI_Controller{
 	public function proses(){
 		$process = $this->Masuk_model->masuk();
 		if($process ==true){
-			$this->session->set_userdata('user_username',$_POST[inputUsername]);
+			$this->session->set_userdata('username_pengguna',$_POST[inputUsername]);
 			redirect('beranda');
 			} else {
 			redirect('masuk');
@@ -35,9 +35,9 @@ class Masuk extends CI_Controller{
 	}
 	
 	public function logout(){
-		$this->session->unset_userdata('user_has_login');
+		$this->session->unset_userdata('pengguna_sudah');
 		$this->session->sess_destroy();
-		redirect('login');
+		redirect('masuk');
 	}
 
 }

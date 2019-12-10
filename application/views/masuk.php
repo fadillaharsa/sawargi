@@ -34,16 +34,19 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 		  <ul class="navbar-nav">
 		    <li class="nav-item active">
-		      <a class="nav-link" href="#">Active</a>
+		      <a class="nav-link" href="#">FaQ</a>
 		    </li>
 		    <li class="nav-item">
-		      <a class="nav-link" href="#">Link</a>
+		      <a class="nav-link" href="#">Kebijakan</a>
 		    </li>
 		    <li class="nav-item">
-		      <a class="nav-link" href="#">Link</a>
+		      <a class="nav-link" href="#">Ketentuan</a>
 		    </li>
 		    <li class="nav-item">
-		      <a class="nav-link disabled" href="#">Disabled</a>
+		      <a class="nav-link" href="#">Tentang</a>
+		    </li>
+			<li class="nav-item">
+		      <a class="nav-link" href="#">Kontak</a>
 		    </li>
 		  </ul>
 		</nav>

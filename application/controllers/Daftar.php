@@ -6,108 +6,105 @@ class Daftar extends CI_Controller{
 		parent::__construct(); 
 		$this->load->helper(array('form', 'url')); 
 		$this->load->library('form_validation');
-	 } 
-   
-   public function index(){
-	   $this->daftar();
-   }
-	   
-	 public function daftar() {
-	   $dataku=[];
-	   $dataku['daftar_action'] = base_url('index.php/daftar/process');
-	   $dataku['daftar_actionLK'] = base_url('index.php/daftar/processLK');
-	   $dataku['action_pencarian'] = base_url('index.php/pencarian/kustom');
-	   $dataku['logout_url'] = base_url('index.php/masuk/logout');
-	   if($this->session->userdata('user_has_login') == true ){
-		   redirect('home');
-		   } else {
-		   $this->load->view('daftar', $dataku);
-	   }
-	 }
-	 
-	   public function process(){
-		   if($this->session->userdata('user_has_login') == true ){
-		   redirect('profil_mahasiswa');
-		   }
-		/* Load form validation library */ 
+	}
 	
-		   
-		/* Validation rule */
-		$this->form_validation->set_rules('npm', 'NPM', 'required');	
-		$this->form_validation->set_rules('nama_mahasiswa', 'Nama', 'required');
-		$this->form_validation->set_rules('email_mahasiswa', 'Email', 'required|valid_email|callback_check_mahasiswa');
-		$this->form_validation->set_rules('password_mahasiswa', 'Password', 'required|min_length[6]|max_length[15]');
-		
-		
+	public function index(){
+		$this->daftar();
+	}
+
+	public function daftar() {
 		$dataku=[];
-	   $dataku['daftar_action'] = base_url('index.php/daftar/process');
-	   $dataku['daftar_actionLK'] = base_url('index.php/daftar/processLK');
-	   $dataku['action_pencarian'] = base_url('index.php/pencarian/kustom');
-	   $dataku['logout_url'] = base_url('index.php/masuk/logout');
+		$dataku['aksi_daftar_rw'] = base_url('daftar/rw');
+		$dataku['aksi_daftar_warga'] = base_url('daftar/warga');
+		if($this->session->userdata('pengguna_sudah_masuk') == true ){
+			redirect('masuk');
+		} else {
+			$this->load->view('daftar', $dataku);
+		}
+	}
+	 
+	public function rw(){
+		if($this->session->userdata('pengguna_sudah_masuk') == true ){
+			redirect('admin');
+		}
+		$this->form_validation->set_rules('input_nomor_rw', 'Nomor RW', 'required');	
+		$this->form_validation->set_rules('input_kode_pos', 'Kode Pos', 'required');
+		$this->form_validation->set_rules('input_username_rw', 'Username RW', 'required|callback_cek_usernamerw');
+		$this->form_validation->set_rules('input_password_rw', 'Password RW', 'required|min_length[6]|max_length[64]');
+		$this->form_validation->set_rules('input_pj_rw', 'Penanggung Jawab RW', 'required');
+		$this->form_validation->set_rules('input_hp_pj', 'Nomor HP Penanggung Jawab RW', 'required');
+		$this->form_validation->set_rules('input_email_pj', 'Email Penanggung Jawab', 'required|valid_email');
+
+		$dataku=[];
+		$dataku['aksi_daftar_rw'] = base_url('daftar/rw');
+		$dataku['aksi_daftar_warga'] = base_url('daftar/warga');
 		   
 		if ($this->form_validation->run() == FALSE) { 
-		   $this->load->view('daftar',$dataku); 
+		   $this->load->view('daftar',$dataku);
 		} 
 		else { 
 		   $this->load->model('Daftar_model');
-		   $this->Daftar_model->saveMahasiswa();
-		   redirect('home');
+		   $this->Daftar_model->daftarkanRW();
+		   redirect('masuk');
 		}
-		   
-	   }
+	}
+	
 	 
-	 
-	 public function processLK() {
-	   if($this->session->userdata('user_has_login') == true ){
-		   redirect('lk_profil');
-	   }
-		/* Load form validation library */ 
-		$this->load->library('form_validation');
-		   
-		/* Validation rule */
-		$this->form_validation->set_rules('kategori_lembaga', 'Kategori', 'required');	
-		$this->form_validation->set_rules('username_lembaga', 'Username', 'required');	
-		$this->form_validation->set_rules('nama_lembaga', 'Nama Lembaga', 'required');
-		$this->form_validation->set_rules('email_lembaga', 'Email', 'required|valid_email|callback_check_lembaga');
-		$this->form_validation->set_rules('password_lembaga', 'Password', 'required|min_length[6]|max_length[15]');
-		
-	   
-	   
-	   $dataku=[];
-	   $dataku['daftar_action'] = base_url('index.php/daftar/process');
-	   $dataku['daftar_actionLK'] = base_url('index.php/daftar/processLK');
-	   $dataku['action_pencarian'] = base_url('index.php/pencarian/kustom');
-	   $dataku['logout_url'] = base_url('index.php/masuk/logout');
-		   
+	public function warga() {
+		if($this->session->userdata('pengguna_sudah_masuk') == true ){
+			redirect('beranda');
+		}
+
+		$this->form_validation->set_rules('input_nama_lengkap', 'Nama Lengkap', 'required');	
+		$this->form_validation->set_rules('input_username', 'Username', 'required|callback_cek_usernamewarga');	
+		$this->form_validation->set_rules('input_password', 'Password', 'required|min_length[6]|max_length[64]');
+		$this->form_validation->set_rules('input_email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('input_hp', 'Nomor HP', 'required');
+		$this->form_validation->set_rules('input_token', 'Token', 'required|callback_cek_token');
+		$this->form_validation->set_rules('input_alamat', 'Alamat', 'required');
+		$this->form_validation->set_rules('input_kode_pos', 'Kode Pos', 'required');
+
+		$dataku=[];
+		$dataku['aksi_daftar_rw'] = base_url('daftar/rw');
+		$dataku['aksi_daftar_warga'] = base_url('daftar/warga');
+
 		if ($this->form_validation->run() == FALSE) { 
-		   $this->load->view('daftar',$dataku); 
+			$this->load->view('daftar',$dataku); 
 		} 
 		else { 
-		   $this->load->model('Daftar_model');
-		   $this->Daftar_model->saveLembaga();
-		   redirect('home');
+			$this->load->model('Daftar_model');
+			$this->Daftar_model->daftarkanWarga();
+			redirect('beranda');
 		}
-	 }
-	 
-	 
-	 public function check_mahasiswa($email_mahasiswa)
-	  {
-			$query = $this->db->where('email_mahasiswa', $email_mahasiswa)->get("mahasiswa");
-		if ($query->num_rows() > 0)
-		   {
-			$this->form_validation->set_message('check_mahasiswa','The '.$email_mahasiswa.' belongs to an existing account');
-			   return FALSE;
-		   }
-		 else 
-			 return TRUE;
-	 }	
-	 
-	  public function check_lembaga($email_lembaga)
-	  {
-		  $query = $this->db->where('email_lembaga', $email_lembaga)->get("lembaga");
+	}
+	
+	public function cek_usernamewarga($input_username){
+		$query = $this->db->where('username_warga', $input_username)->get("data_warga");
 		  if ($query->num_rows() > 0)
 		  {
-			  $this->form_validation->set_message('check_lembaga','The '.$email_lembaga.' belongs to an existing account');
+			  $this->form_validation->set_message('cek_usernamewarga','The '.$input_username.' belongs to an existing account');
+			  return FALSE;
+			  }
+		   else 
+			   return TRUE;
+	}
+
+	public function cek_token($input_token){
+		$query = $this->db->where('token_rw', $input_token)->get("akun_rw");
+		  if ($query->num_rows() == 0)
+		  {
+			  $this->form_validation->set_message('cek_token','Token '.$input_token.' tidak ditemukan');
+			  return FALSE;
+			  }
+		   else 
+			   return TRUE;
+	 } 
+
+	public function cek_usernamerw($input_username_rw){
+		$query = $this->db->where('username_rw', $input_username_rw)->get("akun_rw");
+		  if ($query->num_rows() > 0)
+		  {
+			  $this->form_validation->set_message('cek_usernamerw','The '.$input_username_rw.' belongs to an existing account');
 			  return FALSE;
 			  }
 		   else 

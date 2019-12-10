@@ -35,7 +35,7 @@ class Masuk extends CI_Controller{
 	}
 	
 	public function logout(){
-		$this->session->unset_userdata('pengguna_sudah');
+		$this->session->unset_userdata('pengguna_sudah_masuk');
 		$this->session->sess_destroy();
 		redirect('masuk');
 	}

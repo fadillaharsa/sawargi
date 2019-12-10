@@ -11,8 +11,8 @@ class Masuk_model extends CI_Model {
 
 		if ($this->form_validation->run() == true) {
 			$required=array(
-			'username' => $this->input->post('inputUsername',true) //nama kolom
-			,'password' => md5( $this->input->post('inputPassword',true)) //nama kolom
+			'username_warga' => $this->input->post('inputUsername',true) //nama kolom
+			,'password_warga' => $this->input->post('inputPassword',true) //nama kolom
 			);
 
 			$auth=$this->db->where($required)->get('data_warga');//nama tabel
@@ -28,9 +28,9 @@ class Masuk_model extends CI_Model {
 				$auth=$this->db->where($param)->get('data_warga');
 				$data=$auth->row_array();
 
-				if($required['username'] == $data['username']){
+				if($required['username_warga'] == $data['username']){
 					$this->session->set_userdata('login_message','Maaf, Password Salah!');
-					$this->session->set_userdata('login_valid',$required['username']);
+					$this->session->set_userdata('login_valid',$required['username_warga']);
 				} else{
 					$this->session->set_userdata('login_message','Maaf, Username atau Password Salah!');
 				}

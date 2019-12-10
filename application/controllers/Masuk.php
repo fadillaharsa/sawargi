@@ -28,6 +28,8 @@ class Masuk extends CI_Controller{
 		$process = $this->Masuk_model->masuk();
 		if($process ==true){
 			$this->session->set_userdata('username_pengguna',$_POST[inputUsername]);
+			$this->session->set_userdata('pengguna_sudah_masuk',true);
+			$this->session->set_userdata('jenis_pengguna','warga');
 			redirect('beranda');
 			} else {
 			redirect('masuk');

@@ -9,17 +9,17 @@ class Masuk extends CI_Controller{
 	}
 
 	public function index(){
-		$this->login();
+		$this->masuk();
 	}
 
-	public function login(){
+	public function masuk(){
 		$data=[];
 		$data['title'] = "Masuk Sawargi";
 		$data['aksi_masuk'] = base_url('masuk/proses');
 			if($this->session->userdata('pengguna_sudah_masuk') == true ){
 				redirect('beranda');
 			} else {
-				$this->load->view('login', $data);
+				$this->load->view('masuk', $data);
 			}
 		$this->session->unset_userdata('pesan_masuk');
 	}

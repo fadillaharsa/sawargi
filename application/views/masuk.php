@@ -2,10 +2,14 @@
 <title>Login Sawargi</title>
 </head>
 
-<body>
+<body style="background: url(assets/images/sawargibg.png) no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;">
+
     <div class="container-fluid">
         <div class="row">
-
         <div class="col-sm-2"></div>
         	<div class="col-sm-3" style="margin-top: 200px">
         		<h1>Sawargi</h1>
@@ -25,8 +29,23 @@
 					</div>
         	</div>
         <div class="col-sm-7"></div>
-
         </div>
     </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+		  <ul class="navbar-nav">
+		    <li class="nav-item active">
+		      <a class="nav-link" href="#">Active</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#">Link</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" href="#">Link</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link disabled" href="#">Disabled</a>
+		    </li>
+		  </ul>
+		</nav>
 </body>
 </html>

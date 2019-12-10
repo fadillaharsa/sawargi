@@ -1,38 +1,33 @@
-.mainbg{
-    background-color:#ce0040;
-}
-.blackbg{
-    background-color:black;
-}
-
-.mainborder{
-    border:2px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color:#ce0040;
+/* ---------------- CSS TABS -----------------*/
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  width: 50%;
 }
 
-.whitebg{
-    background-color:white;
+.tablink:hover {
+  background-color: #777;
+
 }
 
-.blackbg{
-    background-color:black;
+.tabcontent {
+  color: white;
+  display: none;
+  padding-top: 50px;
+  height: 100%;
+  border-radius: 10px;
 }
 
-.maincolor{
-    color:#ce0040;
-}
+#mahasiswa {background-color: #00aad4ff;}
+#lembagakemahasiswaan {background-color: #00aad4ff;}
 
-.whitecolor{
-    color:white;
-}
 
 body{
     font-family: 'Quicksand', sans-serif !important;
     font-size: 22px;
 }
-
-.center {
-    padding: 50% 0;
-  }

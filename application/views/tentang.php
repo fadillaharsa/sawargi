@@ -15,7 +15,7 @@
 
             <!-- Ini adalah foto-->
             <h5>Muhammad Ariq Farhansyah Mutyara</h5>
-            <p>Copywriter and Back-End Developer</p>
+            <p>Copy and Content Writer</p>
         </div>
     </div>
 </body>

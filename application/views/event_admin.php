@@ -5,8 +5,8 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-3" style="background-color:#76DAC3; padding:30px">
-                <?php include "menu.php"; ?>
+        <div class="col-sm-3" style="background-color:#76DAC3">
+                <?php include "menu_admin.php"; ?>
             </div>
 
             <div class="col-sm-9">

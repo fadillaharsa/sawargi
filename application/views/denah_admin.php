@@ -10,7 +10,6 @@
             </div>
 
             <div class="col-sm-9">
-<<<<<<< HEAD
                 <?php echo validation_errors(); if (isset($success)) echo '<p>'.$success.'</p>';?>
             	
                 <?php if ($this->session->userdata('denah')==true){
@@ -31,14 +30,12 @@
                         </div>
                     ";
                 }?>
-=======
             	<div class="form-group">
             	<form action="" method="post" enctype="multipart/form-data">
             		<input style="margin-bottom:10px" name="input_link_denah" class="form-control" type = "text" size=40 value="" placeholder="Link Denah">
             		<button type="submit" style="border:0px; background-color:#5CAEA5; margin-bottom: 15px; border-radius:10px " class="btn btn-primary btn-block">Submit</button>
             	</form>
             	</div>
->>>>>>> 6df3bb061ae9a4376bfa247dab5b6c3eeb80c32d
             </div>
         </div>
     </div>

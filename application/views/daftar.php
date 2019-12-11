@@ -24,8 +24,6 @@ document.getElementById("defaultOpen").click();
 				<div class="row centercontainer " align="center">
 					<div class="col-sm-8">
 					
-
-					
 						<button class="tablink" onclick="openPage('mahasiswa', this, '#008080')" id="defaultOpen">WARGA</button>
 						<button class="tablink" onclick="openPage('lembagakemahasiswaan', this, '#008080')">PENGURUS RW</button>
 						<div id="mahasiswa" class="tabcontent">
@@ -71,4 +69,5 @@ document.getElementById("defaultOpen").click();
         </div>
     </div>
 </body>
+<?php include "html_last.php"; ?>
 </html>

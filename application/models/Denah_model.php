@@ -10,5 +10,8 @@ class Denah_model extends CI_Model
   
 		$this->db->insert('denah', $data);
     }
-	
+
+    public function hapus(){
+      
+    }
 }

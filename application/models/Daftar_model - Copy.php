@@ -2,10 +2,9 @@
 class Daftar_model extends CI_Model{
 
 public function daftarkanRW(){
-	$data['nomor_rw'] = $this->input->post('input_nomor_rw');
 	$data['kode_pos_rw'] = $this->input->post('input_kode_pos');
 	$data['username_rw'] = $this->input->post('input_username_rw');
-	$data['password_rw'] = $this->input->post('input_password_rw');
+	$data['password_rw'] = $this->input->post('input_passsword_rw');
 	$data['nama_pj'] = $this->input->post('input_pj_rw');
 	$data['email_pj'] = $this->input->post('input_email_pj');
 	$data['hp_pj'] = $this->input->post('input_hp_pj');

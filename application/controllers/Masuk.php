@@ -17,7 +17,12 @@ class Masuk extends CI_Controller{
 		$data['title'] = "Masuk Sawargi";
 		$data['aksi_masuk'] = base_url('masuk/proses');
 			if($this->session->userdata('pengguna_sudah_masuk') == true ){
-				redirect('beranda');
+				if ($this->session->userdata('jenis_pengguna')=='warga'){
+					redirect('beranda');
+				} else{
+					redirect('admin');
+				}
+				
 			} else {
 				$this->load->view('masuk', $data);
 			}

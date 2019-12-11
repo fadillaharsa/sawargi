@@ -11,13 +11,13 @@
       <a class="nav-link" href="<?php echo site_url()?>keamanan">Sistem Keamanan Rumah</a>
     </li>
     <li class="nav-item" style="background-color: #5CAEA5;">
-      <a class="nav-link" href="<?php echo site_url()?>denah">Denah</a>
+      <a class="nav-link" href="<?php echo site_url()?>denah_admin">Denah</a>
     </li>
     <li class="nav-item" style="background-color: #5CAEA5;">
-      <a class="nav-link" href="<?php echo site_url()?>event">Kalender dan Event</a>
+      <a class="nav-link" href="<?php echo site_url()?>event_admin">Kalender dan Event</a>
     </li>
     <li class="nav-item" style="background-color: #5CAEA5;">
-      <a class="nav-link" href="<?php echo site_url()?>forum">Forum Warga</a>
+      <a class="nav-link" href="<?php echo site_url()?>forum_admin">Forum Warga</a>
     </li>
     <li class="nav-item" style="background-color: #5CAEA5;">
       <a class="nav-link" href="<?php echo site_url()?>biodata">Biodata Saya</a>

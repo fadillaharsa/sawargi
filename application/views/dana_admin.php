@@ -7,16 +7,16 @@
         <div class="row">
             <div class="col-sm-3" style="background-color:#76DAC3; padding:30px">
                 <?php include "menu.php"; ?>
-            </div>
+            <div>
 
             <div class="col-sm-9">
-            	<div class="form-group">
             	<form action="" method="post" enctype="multipart/form-data">
-            		<input style="margin-bottom:10px" name="input_link_denah" class="form-control" type = "text" size=40 value="" placeholder="Link Denah">
+            		<input style="margin-bottom:10px" name="input_jumlah_dana" class="form-control" type = "text" value="" placeholder="Jumlah Dana">
+            		<input style="margin-bottom:10px" name="input_jenis_dana" class="form-control" type = "text" value="" placeholder="Jenis Dana">
+                    <input style="margin-bottom:10px" name="input_peruntukan_dana" class="form-control" type = "text" value="" placeholder="Peruntukan Dana">
             		<button type="submit" style="border:0px; background-color:#5CAEA5; margin-bottom: 15px; border-radius:10px " class="btn btn-primary btn-block">Submit</button>
             	</form>
-            	</div>
-            </div>
+            <div>
 
         </div>
     </div>

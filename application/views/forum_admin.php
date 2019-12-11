@@ -10,6 +10,11 @@
             <div>
 
             <div class="col-sm-9">
+            	<form action="" method="post" enctype="multipart/form-data">
+            		<input style="margin-bottom:10px" name="input_nama_forum" class="form-control" type = "text" size=40 value="" placeholder="Nama Forum">
+            		<input style="margin-bottom:10px" name="input_deskripsi_forum" class="form-control" type = "text" size=40 value="" placeholder="Deskripsi Forum">
+            		<button type="submit" style="border:0px; background-color:#5CAEA5; margin-bottom: 15px; border-radius:10px " class="btn btn-primary btn-block">Submit</button>
+            	</form>
             <div>
 
         </div>

@@ -10,4 +10,5 @@
         </div>
     </div>
 </body>
+<?php include "html_last.php"; ?>
 </html>

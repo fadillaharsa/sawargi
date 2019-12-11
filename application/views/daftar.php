@@ -2,6 +2,8 @@
 <title>Login Sawargi</title>
 </head>
 
+
+
 <body style="background: url(assets/images/sawargibg.png) no-repeat center center fixed;
  -webkit-background-size: cover;
  -moz-background-size: cover;
@@ -14,61 +16,57 @@ document.getElementById("defaultOpen").click();
 }
 </script>
 
-			<div class="container">
-				<div class="row centercontainer " align="center">
-					<div class="col-sm-8">
-						<h2 align="center" style="padding-top:20px">Daftar</h2>
-						<p align="center" style="padding-buttom:20px">Daftarkan dirimu sebagai Mahasiswa untuk dapat mendaftar pada rekrutmen yang tersedia, atau sebagai Lemabaga Kemahasiswaan untuk dapat membuka rekrutmen anggota.</p>
-					</div>
-				</div>
-				<div class="row centercontainer " align="center">
-					<div class="col-sm-8">
-					
+			<div class="container-fluid" style="margin-bottom: 200px">
 
-					
-						<button class="tablink" onclick="openPage('mahasiswa', this, '#008080')" id="defaultOpen">WARGA</button>
-						<button class="tablink" onclick="openPage('lembagakemahasiswaan', this, '#008080')">PENGURUS RW</button>
-						<div id="mahasiswa" class="tabcontent">
-						<?php echo validation_errors(); if (isset($success)) echo '<p>'.$success.'</p>';?>
-								<div id="form" style="color: white; padding: 10px; margin-top: 10px;margin-bottom: 10px">
-								<form style="position: static" action="<?php echo $aksi_daftar_warga;?>" method="post" enctype="multipart/form-data">					
-									<input style="margin-bottom:10px" name="input_nama_lengkap" class="rcorners" type = "text" size=40 value="" placeholder="Nama Lengkap"><br>
-									<input style="margin-bottom:10px" name="input_username" class="rcorners" type = "text" size=40 value="" placeholder="Username"><br>
-									<input style="margin-bottom:10px" name="input_password" class="rcorners" type = "password" size=40 value="" placeholder="Password"><br>
-									<input style="margin-bottom:10px" name="input_email" class="rcorners" type = "text" size=40 value="" placeholder="Email"><br>
-									<input style="margin-bottom:10px" name="input_hp" class="rcorners" type = "text" size=40 value="" placeholder="No. HP"><br>
-									<input style="margin-bottom:10px" name="input_token" class="rcorners" type = "text" size=40 value="" placeholder="Token RW"><br>
-									<input style="margin-bottom:10px" name="input_alamat" class="rcorners" type = "text" size=40 value="" placeholder="Alamat"><br>
-									<input style="margin-bottom:10px" name="input_kode_pos" class="rcorners" type = "text" size=40 value="" placeholder="Kode Pos"><br>
-									<button class="tombol tombolwarna2" type="submit">Daftar</button>
-								</form>
+				<div class="row centercontainer">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-3" style="margin-top: 100px">
+						<h1 align="center">PENDAFTARAN</h1>
+						<div class="row">
+							<div class="col-sm-12">
+							<button style="background-color:#5CAEA5; margin-bottom: 15px;"  class="tablink " onclick="openPage('warga', this, '#008080')" id="defaultOpen">WARGA</button>
+							<button style="background-color:#5CAEA5; margin-bottom: 15px;" class="tablink " onclick="openPage('pengurusrw', this, '#008080')">PENGURUS RW</button><br><br><br>
+
+							<div id="warga" class="tabcontent" style="background-color:#76DAC3; border-radius:15px; padding-left:30px;padding-right:30px;padding-top:30px">
+								<div id="form" style="color: white; padding-left:10px;padding-right:10px;padding-top:10px; margin-top: 10px;">					
+						
+									<form style="position: static" action="" method="post" enctype="multipart/form-data">					
+			
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name= input_nama_lengkap" value="" placeholder="Nama Lengkap">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name="input_username"  value="" placeholder="Username">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "password" class="form-control" name="input_password"  value="" placeholder="Password">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name="input_email"   value="" placeholder="Email">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name="input_no_hp"   value="" placeholder="No. HP">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name="input_token_rw" value="" placeholder="Token RW">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control"  name="input_alamat"   value="" placeholder="Alamat">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" type = "text" class="form-control" name="input_kode_pos"  value="" placeholder="Kode Pos">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="input_gambar" class="form-control" type= "file" size=40 value="" placeholder="Browse">
+										<button type="submit" style="border:0px; background-color:#5CAEA5;border-radius:10px " class="btn btn-primary btn-block">DAFTAR</button>
+									</form>
+								</div>
+							</div>	
+
+							<div id="pengurusrw" class="tabcontent" style="background-color:#76DAC3; border-radius:15px; padding-left:30px;padding-right:30px;padding-top:30px">
+								<div id="form" style="color: white; padding-left:10px;padding-right:10px;padding-top:10px; margin-top: 10px;">
+	
+									<form style="position: static" action="" method="post" enctype="multipart/form-data">
+								
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="nama_lembaga" class="form-control" type = "text"  value="" placeholder="Nomor RW">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="username_lembaga" class="form-control" type = "text" value="" placeholder="Kode Pos">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="email_lembaga" class="form-control" type = "text"  value="" placeholder="Username">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="username_lembaga" class="form-control" type = "password" value="" placeholder="Password">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="username_lembaga" class="form-control" type = "text" value="" placeholder="Penanggung Jawab">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="username_lembaga" class="form-control" type = "text" value="" placeholder="Email Penanggung Jawab">
+										<input style="border:0px; background-color:#95E9D1; margin-bottom: 15px; border-radius:10px" name="username_lembaga" class="form-control" type = "text"value="" placeholder="No. HP Penanggung Jawab">
+										<button style="border:0px; background-color:#5CAEA5;  border-radius:10px " class="btn btn-primary btn-block" type="submit">DAFTAR</button>
+									</form>	
+								</div>
 							</div>
-						</div>
-
-
-						<div id="lembagakemahasiswaan" class="tabcontent">
-						<?php echo validation_errors(); if (isset($success)) echo '<p>'.$success.'</p>';?>
-							<div id="form" style="color: white; padding: 10px; margin-top: 10px;margin-bottom: 10px">
-
-							<form style="position: static" action="<?php echo $aksi_daftar_rw;?>" method="post" enctype="multipart/form-data">
-							
-									<input style="margin-bottom:10px" name="input_nomor_rw" class="rcorners" type = "text"  value="" placeholder="Nomor RW"><br>
-									<input style="margin-bottom:10px" name="input_kode_pos" class="rcorners" type = "text"  value="" placeholder="Kode Pos"><br>
-									<input style="margin-bottom:10px" name="input_username_rw" class="rcorners" type = "text"  value="" placeholder="Username"><br>
-									<input style="margin-bottom:10px" name="input_password_rw" class="rcorners" type = "password"  value="" placeholder="Password"><br>
-									<input style="margin-bottom:10px" name="input_pj_rw" class="rcorners" type = "text" value="" placeholder="Penanggung Jawab"><br>
-									<input style="margin-bottom:10px" name="input_email_pj" class="rcorners" type = "text"  value="" placeholder="Email Penanggung Jawab"><br>
-									<input style="margin-bottom:10px" name="input_hp_pj" class="rcorners" type = "text"  value="" placeholder="No. HP Penanggung Jawab"><br>
-
-							<button class="tombol tombolwarna2" type="submit">Daftar</button>
-							</form>	
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-        </div>
-    </div>
+		</div>
 </body>
 </html>

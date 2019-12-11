@@ -14,8 +14,7 @@
         	<div class="col-sm-3" style="margin-top: 200px">
 					<h1>Sawargi</h1>
 					<p>Sistem Informasi Warga Interaktif</p>
-        		<div class="row">
-							
+        		<div class="row">		
         			<div class="col-sm-12" style="background-color:#76DAC3; border-radius:15px; padding:30px">
 			        	<form action="<?php echo $aksi_masuk;?>" method="post" enctype="multipart/form-data">					
 			        		<div class="form-group">

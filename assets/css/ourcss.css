@@ -1,0 +1,38 @@
+.mainbg{
+    background-color:#ce0040;
+}
+.blackbg{
+    background-color:black;
+}
+
+.mainborder{
+    border:2px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color:#ce0040;
+}
+
+.whitebg{
+    background-color:white;
+}
+
+.blackbg{
+    background-color:black;
+}
+
+.maincolor{
+    color:#ce0040;
+}
+
+.whitecolor{
+    color:white;
+}
+
+body{
+    font-family: 'Quicksand', sans-serif !important;
+    font-size: 22px;
+}
+
+.center {
+    padding: 50% 0;
+  }
